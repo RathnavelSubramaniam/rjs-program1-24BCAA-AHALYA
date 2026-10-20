@@ -10,9 +10,15 @@ const isPrime = (num) => {
     return true;
 };
 
-let number = 11;
+const words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+
+const input = require("fs").readFileSync(0, "utf8").trim();
+const number = parseInt(input, 10);
+
+const name = words[number] !== undefined ? words[number] : number;
+
 if (isPrime(number)) {
-    console.log(number + " is a prime number");
+    console.log(name + " is prime");
 } else {
-    console.log(number + " is not a prime number");
+    console.log(name + " is not prime");
 }
